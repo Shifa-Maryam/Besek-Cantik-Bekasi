@@ -163,6 +163,7 @@ footer .social-icons img {
     .navbar {
         flex-direction: column;
         text-align: center;
+        justify-content: space-between;
     }
 
     .navbar .logo {
