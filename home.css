@@ -10,6 +10,7 @@ body {
     line-height: 1.6;
 }
 
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -52,6 +53,7 @@ body {
     justify-content: center;
 }
 
+/* Hero Section */
 .hero-section {
     text-align: center;
     padding-top: 120px;
@@ -68,6 +70,7 @@ body {
     height: auto;
 }
 
+/* Produk */
 .products {
     padding: 20px;
     text-align: center;
@@ -78,18 +81,33 @@ body {
     margin-bottom: 20px;
 }
 
+/* Product Gallery with Horizontal Scroll */
 .product-gallery {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding: 10px 0; /* Adds some padding */
+}
+
+.product-gallery::-webkit-scrollbar {
+    height: 8px; /* Adjust scrollbar height */
+}
+
+.product-gallery::-webkit-scrollbar-thumb {
+    background-color: #B58E53;
+    border-radius: 5px;
 }
 
 .product-gallery img {
-    width: 30%;
+    width: 300px; /* Adjust the width of each product */
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0; /* Prevents images from shrinking */
 }
 
+/* Why Us Section */
 .why-us {
     padding: 40px 20px;
 }
@@ -101,19 +119,21 @@ body {
 }
 
 .reasons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    margin-top: 30px;
+    background-color: #FFF3D8;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .reason {
+    padding: auto;
+    margin: auto;
+    margin-bottom: 1%;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(50% - 40px);
-    max-width: calc(50% - 40px);
+    max-width: calc(90% - 40px);
+    border-left: 5px solid #B58E53;
 }
 
 .reason h3 {
@@ -125,6 +145,7 @@ body {
     color: #495057;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -135,4 +156,43 @@ footer {
 footer .social-icons img {
     width: 30px;
     margin: 0 10px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar .logo {
+        margin-bottom: 10px;
+    }
+
+    .product-gallery {
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .product-gallery img {
+        width: 200px; /* Adjust the width of the product images for mobile */
+    }
+
+    .reason {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-gallery {
+        gap: 15px;
+    }
+
+    .product-gallery img {
+        width: 180px; /* Further adjust product image sizes on smaller screens */
+    }
+
+    footer {
+        font-size: 14px;
+    }
 }
