@@ -161,9 +161,8 @@ footer .social-icons img {
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
-        justify-content: space-between;
     }
 
     .navbar .logo {
